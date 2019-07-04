@@ -110,3 +110,89 @@ printinfo( age=50, name="miki" );
 Name:  miki
 Age  50
 '''
+'''
+默认参数
+调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：
+def printinfo( name, age = 35 ):
+   "打印任何传入的字符串"
+   print "Name: ", name;
+   print "Age ", age;
+   return;
+ 
+#调用printinfo函数
+printinfo( age=50, name="miki" );
+printinfo( name="miki" );
+以上实例输出结果：
+Name:  miki
+Age  50
+Name:  miki
+Age  35
+'''
+'''
+不定长参数
+你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述2种参数不同，声明时不会命名。基本语法如下：
+def functionname([formal_args,] *var_args_tuple ):
+   "函数_文档字符串"
+   function_suite
+   return [expression]
+加了星号（*）的变量名会存放所有未命名的变量参数。不定长参数实例如下：   
+def printinfo( arg1, *vartuple ):
+   "打印任何传入的参数"
+   print "输出: "
+   print arg1
+   for var in vartuple:
+      print var
+   return;
+ 
+# 调用printinfo 函数
+printinfo( 10 );
+printinfo( 70, 60, 50 );
+输出:
+10
+输出:
+70
+60
+50
+'''
+'''
+匿名函数
+python 使用 lambda 来创建匿名函数。
+lambda只是一个表达式，函数体比def简单很多。
+lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+lambda函数拥有自己的命名空间，且不能访问自有参数列表之外或全局命名空间里的参数。
+虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
+
+语法
+lambda函数的语法只包含一个语句，如下：
+lambda [arg1 [,arg2,.....argn]]:expression
+
+sum = lambda arg1, arg2: arg1 + arg2;
+# 调用sum函数
+print "相加后的值为 : ", sum( 10, 20 )
+print "相加后的值为 : ", sum( 20, 20 )
+相加后的值为 :  30
+相加后的值为 :  40
+'''
+'''
+return 语句
+return语句[表达式]退出函数，选择性地向调用方返回一个表达式。不带参数值的return语句返回None。
+之前的例子都没有示范如何返回数值，下例便告诉你怎么做：
+
+def sum( arg1, arg2 ):
+   # 返回2个参数的和."
+   total = arg1 + arg2
+   print "函数内 : ", total
+   return total;
+ 
+# 调用sum函数
+total = sum( 10, 20 );
+函数内 :  30
+'''
+'''
+变量作用域
+一个程序的所有的变量并不是在哪个位置都可以访问的。访问权限决定于这个变量是在哪里赋值的。
+
+变量的作用域决定了在哪一部分程序你可以访问哪个特定的变量名称。两种最基本的变量作用域如下：
+全局变量
+局部变量
+'''
