@@ -30,3 +30,6 @@ python练习
 
 ### OS
 OS 文件/目录方法
+
+### builtin
+内置函数
