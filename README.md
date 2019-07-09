@@ -24,3 +24,6 @@ python练习
 
 ### File
 文件方法
+
+### error
+异常处理
